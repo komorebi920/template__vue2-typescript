@@ -1,4 +1,4 @@
-# vue2-template
+# vue2-typescript-template
 
 ## Project setup
 
