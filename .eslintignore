@@ -6,3 +6,6 @@ dist
 
 # lock
 yarn.lock
+
+# theme
+theme

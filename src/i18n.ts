@@ -1,3 +1,5 @@
+import enLocale from "element-ui/lib/locale/lang/en";
+import zhLocale from "element-ui/lib/locale/lang/zh-CN";
 import Vue from "vue";
 import VueI18n, { LocaleMessages } from "vue-i18n";
 
@@ -14,7 +16,10 @@ function loadLocaleMessages(): LocaleMessages {
     const matched = key.match(/([A-Za-z0-9-_]+)\./i);
     if (matched && matched.length > 1) {
       const locale = matched[1];
-      messages[locale] = locales(key);
+      messages[locale] = {
+        ...locales(key),
+        ...(locale === "en" ? enLocale : zhLocale),
+      };
     }
   });
   return messages;

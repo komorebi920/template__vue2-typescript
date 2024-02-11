@@ -1,7 +1,14 @@
+# misc
 .DS_Store
-node_modules
-/dist
 
+# dependencies
+node_modules
+
+# build
+dist
+
+# theme
+theme
 
 # local env files
 .env.local

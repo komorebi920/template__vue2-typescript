@@ -115,6 +115,17 @@
         >
       </li>
     </ul>
+    <h3>测试</h3>
+    <ul>
+      <li>
+        <el-button @click="changeLanguage">
+          切换成{{ $i18n.locale === "zh" ? "英文" : "中文" }}
+        </el-button>
+      </li>
+      <li>
+        <el-date-picker />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -124,6 +135,10 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class HelloWorld extends Vue {
   @Prop() msg!: string;
+
+  changeLanguage(): void {
+    this.$i18n.locale = this.$i18n.locale === "zh" ? "en" : "zh";
+  }
 }
 </script>
 
