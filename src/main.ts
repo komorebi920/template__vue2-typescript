@@ -1,5 +1,4 @@
 import App from "@/App.vue";
-import elementConfig from "@/element-config";
 import i18n from "@/i18n";
 import router from "@/router";
 import store from "@/store";
@@ -53,17 +52,21 @@ class MyApp {
 
   constructor(appConfig: AppConfig) {
     this.appConfig = { ...this.appConfig, ...appConfig };
-    this.init();
   }
 
   /**
    * 初始化应用
    * @method
    */
-  private init(): void {
+  public async init(cb?: () => void): Promise<void> {
     Vue.config.productionTip = false;
-    Vue.use(elementConfig);
+    Vue.prototype.$appConfig = this.appConfig;
+    const elementConfig = await import(
+      /* webpackChunkName: "element-config" */ "@/element-config"
+    );
+    Vue.use(elementConfig.default);
     this.vm = initVue(this.appConfig.root, App);
+    typeof cb === "function" && cb();
   }
 }
 
@@ -75,8 +78,15 @@ if (
 
   /**
    * 实例化应用
-   **/
-  new MyApp({ root: "#app" });
+   */
+  const app = new MyApp({ root: "#app" });
+
+  /**
+   * 初始化应用
+   */
+  app.init();
 
   // Example Code End
 }
+
+export default MyApp;
