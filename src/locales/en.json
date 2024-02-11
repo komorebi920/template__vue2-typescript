@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "views": {
+    "home": "Welcome to Your Vue.js + TypeScript App",
+    "about": "This is an about page"
+  }
+}
