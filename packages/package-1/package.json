@@ -1,6 +1,6 @@
 {
   "name": "@vue2-typescript-template/package-1",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "komorebi920 <yxc900920@163.com>",
   "main": "src/index.ts"
 }
