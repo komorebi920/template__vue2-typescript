@@ -1,4 +1,4 @@
-const { version } = require("./package.json");
+const { version } = require("./lerna.json");
 const minimist = require("minimist");
 const processArgv = minimist(process.argv.slice(2));
 const getGitInfo = require("./scripts/get-git-info");

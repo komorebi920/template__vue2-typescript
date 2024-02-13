@@ -3,7 +3,12 @@ import i18n from "@/i18n";
 import router from "@/router";
 import store from "@/store";
 import { AppConfig } from "@/types";
+import package1 from "@vue2-typescript-template/package-1";
+import package2 from "@vue2-typescript-template/package-2";
 import Vue, { Component } from "vue";
+
+package1();
+package2();
 
 /**
  * 创建 Vue 实例
