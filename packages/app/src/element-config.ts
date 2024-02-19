@@ -1,7 +1,7 @@
-import i18n from "@/i18n";
 import { Button, DatePicker } from "element-ui";
 import elementLocale from "element-ui/lib/locale";
 import { VueConstructor } from "vue";
+import i18n from "./i18n";
 
 const components = [Button, DatePicker];
 

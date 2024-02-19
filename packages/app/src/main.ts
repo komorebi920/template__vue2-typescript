@@ -1,14 +1,9 @@
-import App from "@/App.vue";
-import i18n from "@/i18n";
-import router from "@/router";
-import store from "@/store";
-import { AppConfig } from "@/types";
-import package1 from "@vue2-typescript-template/package-1";
-import package2 from "@vue2-typescript-template/package-2";
 import Vue, { Component } from "vue";
-
-package1();
-package2();
+import AppComponent from "./App.vue";
+import i18n from "./i18n";
+import router from "./router";
+import store from "./store";
+import { AppConfig } from "./types";
 
 /**
  * 创建 Vue 实例
@@ -22,7 +17,7 @@ function initVue(root: string, component: Component): Vue {
   }).$mount(root);
 }
 
-class MyApp {
+class App {
   /**
    * Vue 实例
    */
@@ -67,31 +62,12 @@ class MyApp {
     Vue.config.productionTip = false;
     Vue.prototype.$appConfig = this.appConfig;
     const elementConfig = await import(
-      /* webpackChunkName: "element-config" */ "@/element-config"
+      /* webpackChunkName: "element-config" */ "./element-config"
     );
     Vue.use(elementConfig.default);
-    this.vm = initVue(this.appConfig.root, App);
+    this.vm = initVue(this.appConfig.root, AppComponent);
     typeof cb === "function" && cb();
   }
 }
 
-if (
-  process.env.NODE_ENV === "development" ||
-  process.env.VUE_APP_MODE == "production:app"
-) {
-  // Example Code Start
-
-  /**
-   * 实例化应用
-   */
-  const app = new MyApp({ root: "#app" });
-
-  /**
-   * 初始化应用
-   */
-  app.init();
-
-  // Example Code End
-}
-
-export default MyApp;
+export default App;

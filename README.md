@@ -1,4 +1,11 @@
-# vue2-typescript-template
+# template__vue2-typescript
+
+## 常用命令
+
+1. 启动开发环境：`yarn serve`
+2. 格式化代码：`yarn format`
+3. 打包编译：`yarn build`
+4. 更新版本号：`yarn lerna version`
 
 ## 运行环境
 
@@ -13,20 +20,20 @@
 
 ## 模板功能
 
-1. Vue 2  + Vue Router + Vue Router 全家桶
+1. Vue 2 + Vue Router + Vue Router 全家桶
 2. 支持 TypeScript
-    - 使用 `vue-class-component` + `vue-property-decorator` 支持 Vue 2 + TypeScript
-    - 使用 `vuex-module-decorators` 支持 Vuex + TypeScript
+   - 使用 `vue-class-component` + `vue-property-decorator` 支持 Vue 2 + TypeScript
+   - 使用 `vuex-module-decorators` 支持 Vuex + TypeScript
 3. 使用 Jest 单元测试
 4. 使用 `vue-i18n` 支持多语言
 5. 使用 `element-ui` UI 组件库
    - 支持按需加载
    - 支持多语言
    - 支持自定义主题
-5. 支持 Commit Message 校验
-6. 使用 ESLint + Prettier 规范代码格式
-7. 同时支持网页应用打包与库模式打包
+6. 支持 Commit Message 校验
+7. 使用 ESLint + Prettier 规范代码格式
+8. 同时支持网页应用打包与库模式打包
    - 库模式自动生成 demo 页面
    - 导出 Class 类文件
    - 获取当前 Git 分支、提交时间以及 Commit ID
-8. 使用 `lerna` 支持 Monorepo 架构
+9. 使用 `lerna` 支持 Monorepo 架构

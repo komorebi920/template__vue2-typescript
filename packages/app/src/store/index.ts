@@ -1,7 +1,7 @@
-import AppModule from "@/store/modules/app";
 import Vue from "vue";
 import Vuex, { createLogger } from "vuex";
 import { getModule } from "vuex-module-decorators";
+import AppModule from "./modules/app";
 
 Vue.use(Vuex);
 
